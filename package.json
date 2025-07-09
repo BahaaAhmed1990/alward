@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "start": "nodemon index.js",
+    "start": "node index.js",
     "deploy": "cd client && npm run build && cd .. && npm start",
     "build-front": "cd client && npm run build"
   },
