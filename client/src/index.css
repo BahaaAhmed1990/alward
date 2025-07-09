@@ -1,0 +1,204 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  
+  @font-face {
+    font-family: 'Poppins';
+    font-style: normal;
+    font-weight: 400;
+    font-display: swap;
+    src: url('/fonts/Poppins-Regular.ttf');
+  }
+  @font-face {
+    font-family: 'Poppins-Bold';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('/fonts/Poppins-Bold.ttf');
+  }
+  @font-face {
+    font-family: 'Tajawal';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('/fonts/Tajawal-Light.ttf');
+  }
+  @font-face {
+    font-family: 'LyonArabicSlantedDisplay';
+    font-style: normal;
+    font-weight: 900;
+    font-display: swap;
+    src: url('/fonts/LyonArabicSlantedDisplay.otf');
+  }
+  :root {
+    --clr-brand: rgba(171, 209, 194,0.8);
+    --clr-brand-100: rgba(171, 209, 194);
+    --clr-brand-transparent:rgba(0, 62, 168,.5);
+    --clr-accent: hsl(43, 46%, 46%);
+  }
+}
+.theme-dark {
+  --clr-brand: rgba(171, 209, 194,0.8);
+    --clr-brand-100: #ABD1C2;
+    --clr-brand-transparent:rgb(0, 26, 112,.5);
+    --clr-accent: hsl(43, 46%, 46%);;
+}
+
+@layer components{
+  /* sar */
+  .hide-path-sar{
+    stroke-dasharray: 2016;
+    stroke-dashoffset: 2016;
+  }
+  /* ikea */
+  .hide-path-ikea{
+    stroke-dasharray: 1947;
+    stroke-dashoffset: 1947;
+  }
+  /* khozam */
+  .hide-path-khozam{
+    stroke-dasharray: 517;
+    stroke-dashoffset: 517;
+  }
+  /* ksu */
+  .hide-path-ksu{
+    stroke-dasharray: 492;
+    stroke-dashoffset: 492;
+  }
+  /* airport */
+  .hide-path-airport{
+    stroke-dasharray: 342;
+    stroke-dashoffset: 342;
+  }
+  /* inside road */
+  .hide-path-inside-road{
+    stroke-dasharray: 3221;
+    stroke-dashoffset: 3221;
+  }
+  /* inside road */
+  .hide-path-outside-road{
+    stroke-dasharray: 3036;
+    stroke-dashoffset: 3036;
+  }
+  .draw-path-inside{
+    animation: draw 6s linear forwards;
+    animation-delay: 7s;
+  }
+  .draw-path-outside{
+    animation: draw 6s linear forwards;
+    animation-delay: 1s;
+  }
+  .draw-path{
+    opacity: .6;
+    animation: draw 2s linear forwards;
+    animation-delay: 300ms;
+  }
+  .fade-in{
+    animation: fade 1s ease-in-out;
+
+  }
+  .fade-in-out{
+    animation: fade 1s ease-in-out infinite alternate;
+  }
+  
+  @keyframes draw {
+    
+    to{
+      stroke-dashoffset: 0;
+    }
+  }
+  @keyframes fade {
+    from{
+      opacity: 0;
+    }
+    to{
+      opacity:  1;
+    }
+  }
+}
+
+/* width */
+::-webkit-scrollbar {
+  width: 5px;
+  height: 8px;
+}
+
+/* Track */
+::-webkit-scrollbar-track {
+  background: #f1f1f1;
+}
+
+/* Handle */
+::-webkit-scrollbar-thumb {
+  background: rgba(171, 209, 194);
+  border-radius: 5px;
+}
+
+/* Handle on hover */
+::-webkit-scrollbar-thumb:hover {
+  background: #555;
+}
+body {
+  position: relative;
+  overflow: hidden;
+  width: 100vw;
+  height: 100vh;
+  max-height: 100vh;
+  font-family: 'LyonArabicSlantedDisplay';
+  background-color: #fff;
+}
+body.ar{
+  font-family: 'Tajawal';
+}
+
+/* Removing the default appearance */
+.thumb,
+.thumb::-webkit-slider-thumb {
+  -webkit-appearance: none;
+}
+
+.thumb {
+  pointer-events: none;
+  position: absolute;
+  height: 0;
+  width: 200px;
+  outline: none;
+}
+
+.thumb--left {
+  z-index: 52;
+}
+
+.thumb--right {
+  z-index:53;
+}
+
+/* For Chrome browsers */
+.thumb::-webkit-slider-thumb {
+  background-color: #f1f5f7;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px #ced4da;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
+
+/* For Firefox browsers */
+.thumb::-moz-range-thumb {
+  background-color: #f1f5f7;
+  border: none;
+  border-radius: 50%;
+  box-shadow: 0 0 1px 1px #ced4da;
+  cursor: pointer;
+  height: 18px;
+  width: 18px;
+  margin-top: 4px;
+  pointer-events: all;
+  position: relative;
+}
