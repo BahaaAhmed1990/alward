@@ -5,6 +5,7 @@
   "main": "index.js",
   "scripts": {
     "start": "node index.js",
+    "dev": "nodemon index.js",
     "deploy": "cd client && npm run build && cd .. && npm start",
     "build-front": "cd client && npm run build"
   },
@@ -12,6 +13,6 @@
   "author": "",
   "license": "ISC",
   "dependencies": {
-    "express": "^5.1.0"
+    "express": "^4.21.2"
   }
 }
