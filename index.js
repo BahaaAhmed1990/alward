@@ -1,15 +1,14 @@
 const express = require('express');
 const path = require('path');
-// const log = require('./middlewares/log');
+const log = require('./middlewares/log');
+const logController = require('./controllers/logController');
 const app = express();
 
-// app.use(log)
+app.use(log)
 app.use(express.static(path.resolve(__dirname, 'dist')))
 
 
-app.get('/log', (req, res) => {
-    res.sendFile(path.resolve(__dirname, 'log.txt'))
-})
+app.get('/log', logController)
 app.get('*', (req, res) => {
     res.sendFile(path.resolve(__dirname, 'dist', 'index.html'));
 });
